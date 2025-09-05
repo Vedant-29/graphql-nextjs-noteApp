@@ -394,7 +394,7 @@ const client = new ApolloClient({
 
 ## 🧪 Step 2: Your First GraphQL Hook
 
-**Create a notes list component:**
+**Create a notes list component:**`
 ```typescript
 // This is what you'll build in frontend/src/components/NotesList.tsx
 import { useQuery, gql } from '@apollo/client';

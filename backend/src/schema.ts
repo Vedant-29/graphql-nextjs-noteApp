@@ -9,7 +9,7 @@ export const typeDefs = `
   }
 
   type Query {
-    notes: [Note!]!
+    notes(search: String): [Note!]!
     note(id: ID!): Note
   }
 

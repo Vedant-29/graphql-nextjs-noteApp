@@ -2,8 +2,14 @@ import { Context } from './index';
 
 export const resolvers = {
   Query: {
-    notes: async (_: any, __: any, { prisma }: Context) => {
+    notes: async (_: any, {search}: {search?: string}, { prisma }: Context) => {
       return await prisma.note.findMany({
+        where: search ? {
+          OR: [
+            {title: {contains: search, mode: 'insensitive'}},
+            {content: {contains: search, mode: 'insensitive'}}
+          ]
+        } : {},
         orderBy: { createdAt: 'desc' },
       });
     },
