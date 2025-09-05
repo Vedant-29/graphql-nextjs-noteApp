@@ -1,5 +1,4 @@
 import { useQuery, useMutation, gql } from "@apollo/client";
-import { Note } from "@/types";
 
 // GraphQL Operations
 export const GET_NOTES = gql`
